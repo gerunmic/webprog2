@@ -1,0 +1,10 @@
+<h1>Little Shop Of Horrors</h1>
+<p>Supplying the earth with obsolete things since 2013</p>
+<% @products.each do |product| %>
+  <div class="entry">
+    <%= image_tag(product.image_url, :size => "100x100" ) %>
+    <h3><%= product.title %></h3>
+	<p><%= sanitize(product.description) %></p> <div class="price_line">
+	<span class="price"><%= product.price %></span> </div>
+  </div>
+<% end %>
