@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pragprog Books Online Store</title>
-<!-- START:stylesheet -->
+  <title>Little Shop of Horros</title>
   <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "depot", :media => "all" %><!-- <label id="code.slt"/> -->
-<!-- END:stylesheet -->
+  <%= stylesheet_link_tag "depot", :media => "all" %>
 </head>
 <body id="store">
   <div id="banner">
-    <%= @page_title || "Little Shop Of Horros" %><!-- <label id="code.depot.e.title"/> -->
+    <%= @page_title || "Little Shop Of Horros" %>
   </div>
   <div id="columns">
     <div id="side">
-      <a href="http://www....">Home</a><br />
-      <a href="http://www..../faq">Questions</a><br />
-      <a href="http://www..../news">News</a><br />
-      <a href="http://www..../contact">Contact</a><br />
+      <a href="/">Home</a><br />
+      <a href="/faq">Questions</a><br />
+      <a href="/news">News</a><br />
+      <a href="/contact">Contact</a><br />
     </div>
     <div id="main">
-      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+      <%= yield %>
     </div>
   </div>
 </body>
