@@ -1,20 +1,31 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-  <title>Little Shop of Horros</title>
-  <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "depot", :media => "all" %>
+  <title>Little Shop Of Horrors</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 </head>
-<body id="store">
+<!-- END:head -->
+<body class="<%= controller.controller_name %>">
   <div id="banner">
-    <%= @page_title || "Little Shop Of Horros" %>
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Little Shop Of Horrors" %>
   </div>
   <div id="columns">
     <div id="side">
-      <a href="/">Home</a><br />
-      <a href="/faq">Questions</a><br />
-      <a href="/news">News</a><br />
-      <a href="/contact">Contact</a><br />
+	
+	<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+        <%= render @cart %>
+      <% end %>
+
+	  
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="http://www..../news">News</a></li>
+        <li><a href="http://www..../contact">Contact</a></li>
+      </ul>
     </div>
     <div id="main">
       <%= yield %>
@@ -22,3 +33,5 @@
   </div>
 </body>
 </html>
+
+

@@ -5,7 +5,7 @@ class CartsController < ApplicationController
     @carts = Cart.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { redirect_to store_url }
       format.json { render json: @carts }
     end
   end
